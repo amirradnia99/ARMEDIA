@@ -47,3 +47,8 @@ A modern web-based dashboard for monitoring Quectel EC200U cellular modules.
 4. Click "Connect" and select your device
 
 The dashboard will automatically handle all the AT command communication and provide a beautiful, real-time visualization of your cellular signal quality!
+
+## Contributors
+
+- **Reza faridi(https://github.com/Faridi1419)** - Web dashboard development
+- **Amir Radnia(https://github.com/amirradnia99)** - Original Python AT command implementation
