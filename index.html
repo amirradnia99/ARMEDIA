@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EC200U Cellular Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+<header class="header">
+    <div class="header-content">
+        <div class="header-left">
+            <h1><i class="fas fa-satellite-dish"></i> EC200U Cellular Monitor</h1>
+        </div>
+        <div class="header-right">
+            <div class="logo">
+                <span class="logo-by">by</span>
+                <span class="logo-armed">
+                    <span class="logo-arm">ARM</span><span class="logo-media">EDIA</span>
+                </span>
+            </div>
+            <div class="connection-status" id="connectionStatus">
+                <span class="status-dot"></span>
+                <span>Disconnected</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Signal Quality Card -->
+            <div class="card signal-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-signal"></i> Signal Quality</h2>
+                    <div class="last-update" id="lastUpdate">Never</div>
+                </div>
+                <div class="card-body">
+                    <div class="signal-indicator">
+                        <div class="signal-bars">
+                            <div class="bar" id="bar1"></div>
+                            <div class="bar" id="bar2"></div>
+                            <div class="bar" id="bar3"></div>
+                            <div class="bar" id="bar4"></div>
+                            <div class="bar" id="bar5"></div>
+                        </div>
+                        <div class="signal-value" id="signalValue">--</div>
+                    </div>
+                    <div class="signal-details">
+                        <div class="detail-item">
+                            <label>RSSI:</label>
+                            <span id="rssiValue">-- dBm</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>BER:</label>
+                            <span id="berValue">-- %</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Quality:</label>
+                            <span id="qualityText">Unknown</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module Info Card -->
+            <div class="card info-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-microchip"></i> Module Information</h2>
+                </div>
+                <div class="card-body">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Model:</label>
+                            <span id="modelInfo">--</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Revision:</label>
+                            <span id="revisionInfo">--</span>
+                        </div>
+                        <div class="info-item">
+                            <label>SIM Status:</label>
+                            <span id="simStatus">--</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Port:</label>
+                            <span id="portInfo">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls Card -->
+            <div class="card controls-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-cogs"></i> Controls</h2>
+                </div>
+                <div class="card-body">
+                    <div class="control-buttons">
+                        <button id="connectBtn" class="btn btn-primary">
+                            <i class="fas fa-plug"></i> Connect
+                        </button>
+                        <button id="refreshBtn" class="btn btn-secondary" disabled>
+                            <i class="fas fa-sync"></i> Manual Refresh
+                        </button>
+                        <button id="scanBtn" class="btn btn-secondary">
+                            <i class="fas fa-search"></i> Scan Ports
+                        </button>
+                    </div>
+                    <div class="auto-refresh">
+                        <label>
+                            <input type="checkbox" id="autoRefresh" checked>
+                            Auto-refresh every 2 seconds
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Log Card -->
+            <div class="card log-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-terminal"></i> Command Log</h2>
+                    <button id="clearLog" class="btn-text">Clear</button>
+                </div>
+                <div class="card-body">
+                    <div class="log-container" id="logContainer">
+                        <div class="log-entry info">
+                            <span class="timestamp">[00:00:00]</span>
+                            <span>Dashboard initialized. Click Connect to start monitoring.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Connection Modal -->
+    <div id="connectionModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Serial Port</h3>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="portList" class="port-list">
+                    <!-- Ports will be listed here -->
+                </div>
+                <div class="modal-actions">
+                    <button id="refreshPorts" class="btn btn-secondary">
+                        <i class="fas fa-redo"></i> Refresh Ports
+                    </button>
+                    <button id="connectManual" class="btn btn-primary" disabled>
+                        Connect to Selected Port
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
