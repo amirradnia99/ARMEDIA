@@ -9,22 +9,16 @@
 </head>
 <body>
     <div class="dashboard">
-<<<<<<< HEAD:front-end/index.html
         <!-- Header -->
-=======
->>>>>>> coworker/main:index.html
         <header class="header">
             <div class="header-content">
                 <div class="header-left">
                     <h1><i class="fas fa-satellite-dish"></i> EC200U Cellular Monitor</h1>
-<<<<<<< HEAD:front-end/index.html
                     <div class="mode-toggle">
                         <button id="modeToggle" class="btn-text">
                             <i class="fas fa-sliders-h"></i> Advanced Mode
                         </button>
                     </div>
-=======
->>>>>>> coworker/main:index.html
                 </div>
                 <div class="header-right">
                     <div class="logo">
@@ -41,7 +35,9 @@
             </div>
         </header>
 
+        <!-- Main Content -->
         <main class="main-content">
+            <!-- Signal Quality Card -->
             <div class="card signal-card">
                 <div class="card-header">
                     <h2><i class="fas fa-signal"></i> Signal Quality</h2>
@@ -75,6 +71,7 @@
                 </div>
             </div>
 
+            <!-- Module Info Card -->
             <div class="card info-card">
                 <div class="card-header">
                     <h2><i class="fas fa-microchip"></i> Module Information</h2>
@@ -84,6 +81,10 @@
                         <div class="info-item">
                             <label>Model:</label>
                             <span id="modelInfo">--</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Revision:</label>
+                            <span id="revisionInfo">--</span>
                         </div>
                         <div class="info-item">
                             <label>SIM Status:</label>
@@ -97,12 +98,8 @@
                 </div>
             </div>
 
-<<<<<<< HEAD:front-end/index.html
             <!-- Controls Card (Simple Mode) -->
             <div class="card controls-card simple-controls">
-=======
-            <div class="card controls-card">
->>>>>>> coworker/main:index.html
                 <div class="card-header">
                     <h2><i class="fas fa-cogs"></i> Controls</h2>
                     <div class="mode-badge">Simple</div>
@@ -112,13 +109,8 @@
                         <button id="connectBtn" class="btn btn-primary">
                             <i class="fas fa-plug"></i> Connect to Backend
                         </button>
-<<<<<<< HEAD:front-end/index.html
                         <button id="refreshBtn" class="btn btn-secondary">
                             <i class="fas fa-sync"></i> Manual Refresh
-=======
-                        <button id="clearLog" class="btn btn-secondary">
-                             Clear Log
->>>>>>> coworker/main:index.html
                         </button>
                     </div>
                     <div class="auto-refresh">
@@ -130,7 +122,6 @@
                 </div>
             </div>
 
-<<<<<<< HEAD:front-end/index.html
             <!-- Controls Card (Advanced Mode - Hidden by default) -->
             <div class="card controls-card advanced-controls" style="display: none;">
                 <div class="card-header">
@@ -174,28 +165,18 @@
                     <button id="clearLog" class="btn-text">
                         <i class="fas fa-trash"></i> Clear
                     </button>
-=======
-            <div class="card log-card">
-                <div class="card-header">
-                    <h2><i class="fas fa-terminal"></i> Status Log</h2>
->>>>>>> coworker/main:index.html
                 </div>
                 <div class="card-body">
                     <div class="log-container" id="logContainer">
                         <div class="log-entry info">
                             <span class="timestamp">[00:00:00]</span>
-<<<<<<< HEAD:front-end/index.html
                             <span>System ready. Start backend server first or use Advanced Mode for direct connection.</span>
-=======
-                            <span>System ready. Start the backend server first!</span>
->>>>>>> coworker/main:index.html
                         </div>
                     </div>
                 </div>
             </div>
         </main>
     </div>
-<<<<<<< HEAD:front-end/index.html
 
     <!-- Connection Modal (For Advanced Mode) -->
     <div id="connectionModal" class="modal">
@@ -220,8 +201,6 @@
         </div>
     </div>
 
-=======
->>>>>>> coworker/main:index.html
     <script src="script.js"></script>
 </body>
 </html>
